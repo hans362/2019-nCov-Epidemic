@@ -30,10 +30,10 @@ table.gridtable td {
 	<th>数据来源</th><th>确诊</th><th>疑似</th><th>治愈</th><th>死亡</th>
 </tr>
 <tr>
-	<td>丁香园</td><td><?php echo file_get_contents("http://127.0.0.1/dxy.php?type=confirmed"); ?></td><td><?php echo file_get_contents("http://127.0.0.1/dxy.php?type=suspected"); ?></td><td><?php echo file_get_contents("http://127.0.0.1/dxy.php?type=cured"); ?></td><td><?php echo file_get_contents("http://127.0.0.1/dxy.php?type=dead"); ?></td>
+	<td>丁香园</td><td><?php echo file_get_contents("https://lab.hans362.cn/dxy.php?type=confirmed"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/dxy.php?type=suspected"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/dxy.php?type=cured"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/dxy.php?type=dead"); ?></td>
 </tr>
 <tr>
-	<td>网易</td><td><?php echo file_get_contents("http://127.0.0.1/wy.php?type=confirmed"); ?></td><td><?php echo file_get_contents("http://127.0.0.1/wy.php?type=suspected"); ?></td><td><?php echo file_get_contents("http://127.0.0.1/wy.php?type=cured"); ?></td><td><?php echo file_get_contents("http://127.0.0.1/wy.php?type=dead"); ?></td>
+	<td>网易</td><td><?php echo file_get_contents("https://lab.hans362.cn/wy.php?type=confirmed"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/wy.php?type=suspected"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/wy.php?type=cured"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/wy.php?type=dead"); ?></td>
 </tr>
 <tr>
 	<td>夸克</td><td>X</td><td>X</td><td>X</td><td>X</td>
