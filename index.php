@@ -41,4 +41,8 @@ table.gridtable td {
 <tr>
 	<td>夸克</td><td><?php echo $confirmed; ?></td><td><?php echo $suspected; ?></td><td><?php echo $cured; ?></td><td><?php echo $dead; ?></td>
 </tr>
+<?php require("tx.php"); ?>
+<tr>
+	<td>腾讯</td><td><?php echo $confirmed; ?></td><td><?php echo $suspected; ?></td><td><?php echo $cured; ?></td><td><?php echo $dead; ?></td>
+</tr>
 </table>
