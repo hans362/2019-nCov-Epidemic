@@ -19,18 +19,10 @@ for ($i = 0; $i < $data->length; $i++) {
 $confirmed = '/(?<=\确诊 ).+?(?= 例)/';
 $cured = '/(?<=\治愈 ).+?(?= 例)/';
 $dead = '/(?<=\死亡 ).+?(?= 例)/';
-if ($type == 'confirmed') {
-	preg_match($confirmed, $res, $out);
-	echo $out[0];
-}
-if ($type == 'suspected') {
-	echo '暂无数据';
-}
-if ($type == 'dead') {
-	preg_match($dead, $res, $out);
-	echo $out[0];
-}
-if ($type == 'cured') {
-	preg_match($cured, $res, $out);
-	echo $out[0];
-}
+preg_match($confirmed, $res, $out);
+$confirmed = $out[0];
+$suspected = '暂无数据';
+preg_match($dead, $res, $out);
+$dead = $out[0];
+preg_match($cured, $res, $out);
+$cured = $out[0];

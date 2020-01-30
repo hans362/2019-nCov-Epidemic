@@ -35,7 +35,7 @@ table.gridtable td {
 </tr>
 <?php require("wy.php"); ?>
 <tr>
-	<td>网易</td><td><?php echo file_get_contents("https://lab.hans362.cn/wy.php?type=confirmed"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/wy.php?type=suspected"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/wy.php?type=cured"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/wy.php?type=dead"); ?></td>
+	<td>网易</td><td><?php echo $confirmed; ?></td><td><?php echo $suspected; ?></td><td><?php echo $cured; ?></td><td><?php echo $dead; ?></td>
 </tr>
 <tr>
 	<td>夸克</td><td><?php echo file_get_contents("https://lab.hans362.cn/kk.php?type=confirmed"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/kk.php?type=suspected"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/kk.php?type=cured"); ?></td><td><?php echo file_get_contents("https://lab.hans362.cn/kk.php?type=dead"); ?></td>
