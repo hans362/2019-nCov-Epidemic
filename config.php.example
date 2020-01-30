@@ -1,0 +1,35 @@
+<?php
+global $servername;
+
+/* 以下内容需要填写 */
+//填写 MySQL 服务器地址
+$servername = "example.com";
+global $username;
+//填写 MySQL 用户名
+$username = "username";
+global $password;
+//填写 MySQL 密码
+$password = "password";
+global $db;
+//填写 MySQL 数据库名
+$db = "dbname";
+/* 以上内容需要填写 */
+
+global $conn;
+$conn = mysqli_connect($servername, $username, $password, $db);
+mysqli_set_charset($conn, "utf8mb4");
+function sqlMethod($sql)
+{
+	/*$conn = mysqli_connect($servername, $username, $password, $db);
+	mysqli_set_charset($conn, "utf8mb4");*/
+    if (!$GLOBALS['conn']) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    if ($GLOBALS['conn']->query($sql) === TRUE) {
+        echo "success!";
+    } else {
+        echo "error!" . $GLOBALS['conn']->error;
+    }
+    /*mysqli_query($conn, $sql);*/
+    //$GLOBALS['conn']->close();
+}

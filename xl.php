@@ -10,3 +10,6 @@ $confirmed = $res->gntotal;
 $suspected = $res->sustotal;
 $dead = $res->deathtotal;
 $cured = $res->curetotal;
+include_once 'config.php';
+$sql = "UPDATE data SET confirmed=" . $confirmed . ", suspected=" . $suspected . ", cured=" . $cured . ", dead=" . $dead . " WHERE `source` = 'xl'";
+sqlMethod($sql);

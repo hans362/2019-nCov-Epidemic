@@ -11,3 +11,6 @@ $confirmed = $res->confirmed;
 $suspected = $res->unconfirmed;
 $dead = $res->died;
 $cured = $res->cured;
+include_once 'config.php';
+$sql = "UPDATE data SET confirmed=" . $confirmed . ", suspected=" . $suspected . ", cured=" . $cured . ", dead=" . $dead . " WHERE `source` = 'bd'";
+sqlMethod($sql);

@@ -27,3 +27,6 @@ preg_match($dead, $res, $out);
 $dead = $out[0];
 preg_match($cured, $res, $out);
 $cured = $out[0];
+include_once 'config.php';
+$sql = "UPDATE data SET confirmed=" . $confirmed . ", suspected=" . $suspected . ", cured=" . $cured . ", dead=" . $dead . " WHERE `source` = 'dxy'";
+sqlMethod($sql);

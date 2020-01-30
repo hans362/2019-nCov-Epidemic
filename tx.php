@@ -11,3 +11,6 @@ $confirmed = $res->chinaTotal->confirm;
 $suspected = $res->chinaTotal->suspect;
 $dead = $res->chinaTotal->dead;
 $cured = $res->chinaTotal->heal;
+include_once 'config.php';
+$sql = "UPDATE data SET confirmed=" . $confirmed . ", suspected=" . $suspected . ", cured=" . $cured . ", dead=" . $dead . " WHERE `source` = 'tx'";
+sqlMethod($sql);
