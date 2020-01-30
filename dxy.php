@@ -19,19 +19,11 @@ $confirmed = '/(?<=\"confirmedCount":).+?(?=,)/';
 $suspected = '/(?<=\"suspectedCount":).+?(?=,)/';
 $cured = '/(?<=\"curedCount":).+?(?=,)/';
 $dead = '/(?<=\"deadCount":).+?(?=,)/';
-if ($type == 'confirmed') {
 	preg_match($confirmed, $res, $out);
-	echo $out[0];
-}
-if ($type == 'suspected') {
+	$confirmed = $out[0];
 	preg_match($suspected, $res, $out);
-	echo $out[0];
-}
-if ($type == 'dead') {
+	$suspected = $out[0];
 	preg_match($dead, $res, $out);
-	echo $out[0];
-}
-if ($type == 'cured') {
+	$dead = $out[0];
 	preg_match($cured, $res, $out);
-	echo $out[0];
-}
+	$cured = $out[0];
