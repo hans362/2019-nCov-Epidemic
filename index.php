@@ -46,3 +46,8 @@ table.gridtable td {
 	<td>腾讯</td><td><?php echo $confirmed; ?></td><td><?php echo $suspected; ?></td><td><?php echo $cured; ?></td><td><?php echo $dead; ?></td>
 </tr>
 </table>
+<?php require("xl.php"); ?>
+<tr>
+	<td>新浪</td><td><?php echo $confirmed; ?></td><td><?php echo $suspected; ?></td><td><?php echo $cured; ?></td><td><?php echo $dead; ?></td>
+</tr>
+</table>
