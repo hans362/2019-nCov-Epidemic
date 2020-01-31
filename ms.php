@@ -1,9 +1,6 @@
 <?php
-$type = $_GET["type"];
-header("http-equiv: content-type;Content-type: text/html; charset=utf-8");
 $url = 'http://m.medsci.cn/wh.asp';
 $outPageTxt = file_get_contents($url);
-//$outPageTxt = iconv("gb2312", "utf-8//IGNORE", $outPageTxt);
 $dom = new DOMDocument();
 @$dom->loadHTML($outPageTxt);
 $dom->normalize();
@@ -15,7 +12,6 @@ for ($i = 0; $i < $data->length; $i++) {
     $text = $items->nodeValue;
     $res = $res . $text . '<br/>';
 }
-//echo $res;
 $confirmed = '/(?<=\确诊 ).+?(?= 例)/';
 $suspected = '/(?<=\疑似  ).+?(?=  例)/';
 $cured = '/(?<=\治愈 ).+?(?= 例)/';

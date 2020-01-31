@@ -1,6 +1,4 @@
 <?php
-$type = $_GET["type"];
-header("http-equiv: content-type;Content-type: text/html; charset=utf-8");
 $url = 'https://news.163.com/special/epidemic/';
 $outPageTxt = file_get_contents($url);
 $outPageTxt = iconv("gb2312", "utf-8//IGNORE", $outPageTxt);
@@ -15,7 +13,6 @@ for ($i = 0; $i < $data->length; $i++) {
     $text = $items->nodeValue;
     $res = $res . $text . '<br/>';
 }
-//echo $res;
 $confirmed = '/(?<=\确诊 ).+?(?= 例)/';
 $cured = '/(?<=\治愈 ).+?(?= 例)/';
 $dead = '/(?<=\死亡 ).+?(?= 例)/';

@@ -4,7 +4,12 @@
 https://ncov.hans362.cn/
 ### 方法二：手动搭建
 1. 准备 LNMP 或 LAMP 环境
-2. 创建一个数据库，导入下方数据表
+2. 在网站根目录下执行：
+```
+git clone https://github.com/hans362/2019-nCov-Epidemic.git
+mv 2019-nCov-Epidemic/* .
+```
+3. 创建一个名为 ncov 的数据库，执行下方 SQL 语句导入数据表：
 ```
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -64,5 +69,8 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 ```
-3. 修改 config.php.example 内的数据库配置，并重命名为 config.php
-4. 添加定时任务，每5分钟执行 php -r path/to/your/directory/cron.php
+4. 修改 config.php.example 内的数据库配置，并重命名为 config.php
+5. 添加定时任务，每5分钟执行：
+```
+php -r /path/to/your/directory/cron.php
+```

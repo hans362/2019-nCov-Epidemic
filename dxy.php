@@ -1,6 +1,4 @@
 <?php
-$type = $_GET["type"];
-header("http-equiv: content-type;Content-type: text/html; charset=utf-8");
 $url = 'https://3g.dxy.cn/newh5/view/pneumonia';
 $outPageTxt = file_get_contents($url);
 $dom = new DOMDocument();
@@ -14,7 +12,6 @@ for ($i = 0; $i < $data->length; $i++) {
     $text = $items->nodeValue;
     $res = $res . $text . '<br/>';
 }
-//echo $res;
 $confirmed = '/(?<=\"confirmedCount":).+?(?=,)/';
 $suspected = '/(?<=\"suspectedCount":).+?(?=,)/';
 $cured = '/(?<=\"curedCount":).+?(?=,)/';
