@@ -161,4 +161,10 @@ p{
 </table>
 </div>
 <p>*表格中空白或显示 NULL 表示暂时无法获取到数据或数据来源不提供该项数据服务</p>
+<script language="JavaScript">
+function myrefresh(){
+   window.location.reload();
+}
+setTimeout('myrefresh()',5000); //指定1秒刷新一次
+</script>
 </body>
