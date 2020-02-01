@@ -72,5 +72,5 @@ COMMIT;
 4. 修改 config.php.example 内的数据库配置，并重命名为 config.php
 5. 添加定时任务，每5分钟执行：
 ```
-php -r /path/to/your/directory/cron.php
+php -q /path/to/your/directory/cron.php
 ```
