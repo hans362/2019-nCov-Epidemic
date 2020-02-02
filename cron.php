@@ -6,4 +6,6 @@
     include_once 'tx.php';
     include_once 'ms.php';
     include_once 'xl.php';
+    include_once '360.php';
+    include_once 'zxzy.php';
 ?>
