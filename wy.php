@@ -6,7 +6,7 @@ $dom = new DOMDocument();
 @$dom->loadHTML($outPageTxt);
 $dom->normalize();
 $xpath = new DOMXPath($dom);
-$data = $xpath->query('//*[@id="map_block"]/div/div[1]/div[2]/p[1]/text()');
+$data = $xpath->query('//*[@id="map_block"]/div/div[3]/div[2]/p[1]/text()');
 $res = '';
 for ($i = 0; $i < $data->length; $i++) {
     $items = $data->item($i);
