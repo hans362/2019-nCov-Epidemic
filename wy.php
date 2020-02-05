@@ -6,23 +6,38 @@ $dom = new DOMDocument();
 @$dom->loadHTML($outPageTxt);
 $dom->normalize();
 $xpath = new DOMXPath($dom);
-$data = $xpath->query('//*[@id="map_block"]/div/div[3]/div[2]/p[1]/text()');
+$data = $xpath->query('//*[@id="map_block"]/div/div[3]/div[2]/div[1]/div/text()');
 $res = '';
 for ($i = 0; $i < $data->length; $i++) {
     $items = $data->item($i);
     $text = $items->nodeValue;
-    $res = $res . $text . '<br/>';
+    $res = $res . $text;
 }
-$confirmed = '/(?<=\确诊 ).+?(?= 例)/';
-$cured = '/(?<=\治愈 ).+?(?= 例)/';
-$dead = '/(?<=\死亡 ).+?(?= 例)/';
-preg_match($confirmed, $res, $out);
-$confirmed = $out[0];
-$suspected = 'NULL';
-preg_match($dead, $res, $out);
-$dead = $out[0];
-preg_match($cured, $res, $out);
-$cured = $out[0];
+$confirmed = $res;
+$data = $xpath->query('//*[@id="map_block"]/div/div[3]/div[2]/div[2]/div/text()');
+$res = '';
+for ($i = 0; $i < $data->length; $i++) {
+    $items = $data->item($i);
+    $text = $items->nodeValue;
+    $res = $res . $text;
+}
+$suspected = $res;
+$data = $xpath->query('//*[@id="map_block"]/div/div[3]/div[2]/div[3]/div/text()');
+$res = '';
+for ($i = 0; $i < $data->length; $i++) {
+    $items = $data->item($i);
+    $text = $items->nodeValue;
+    $res = $res . $text;
+}
+$dead = $res;
+$data = $xpath->query('//*[@id="map_block"]/div/div[3]/div[2]/div[4]/div/text()');
+$res = '';
+for ($i = 0; $i < $data->length; $i++) {
+    $items = $data->item($i);
+    $text = $items->nodeValue;
+    $res = $res . $text;
+}
+$cured = $res;
 include_once 'config.php';
 $sql = "UPDATE data SET confirmed=" . $confirmed . ", suspected=" . $suspected . ", cured=" . $cured . ", dead=" . $dead . " WHERE `source` = 'wy'";
 sqlMethod($sql);
