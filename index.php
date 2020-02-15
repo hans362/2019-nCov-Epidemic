@@ -142,7 +142,7 @@ p{
 <h2>2019-nCov 中国实时疫情信息聚合</h2>
 <div class="table-wrapper">
 <table class="fl-table">
-	<thead><tr><th>数据来源</th><th>确诊</th><th>疑似</th><th>治愈</th><th>死亡</th></tr></thead>
+	<thead><tr><th>数据来源</th><th>累计确诊</th><th>疑似</th><th>治愈</th><th>死亡</th></tr></thead>
 	<tbody>
     <?php
         include_once 'config.php';
